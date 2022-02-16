@@ -87,8 +87,3 @@ if __name__ == '__main__':
     parser.add_argument("-p", "--port", type=int, default=8080)
     args = parser.parse_args()
     start_server(check_form, port=args.port)
-
-if __name__ == "__main__":
-    while True:
-        get_availability_data()
-
