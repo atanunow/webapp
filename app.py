@@ -78,13 +78,6 @@ data = input_group("Fill informations:",[
 
 
 
-app.add_url_rule('/tool', 'webio_view', webio_view(check_form),
-            methods=['GET', 'POST', 'OPTIONS'])
-
-if __name__ == '__main__':
-    start_server(check_form, port=8080, debug=True)
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-p", "--port", type=int, default=8080)
-    args = parser.parse_args()
-
-    start_server(check_form, port=args.port)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
